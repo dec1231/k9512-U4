@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day01" />
+        <module name="day02_sb" />
+        <module name="day02_sbdemo" />
+        <module name="day03_sb" />
+        <module name="house_backapi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day01" target="1.5" />
+      <module name="day02_sb" target="1.8" />
+      <module name="day02_sbdemo" target="1.8" />
+      <module name="day03_sb" target="1.8" />
+      <module name="house_backapi" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--定义代码块-->
+    <footer th:fragment="content">
+        <div>我是公共的内容,以后是为了给别人进行引用</div>
+    </footer>
+</head>
+<body>
+我是thymeleaf的模板，替换jsp<br/>
+<p th:text="'再见疫情<br>再也不见了'+${name}"></p>
+<p th:utext="'再见疫情<br>再也不见了'+${name}"></p>
+<hr>
+<input type="text" th:value="${name}">
+<!--<div th:if="false">
+    年级小于20岁，正是努力学习的时候
+</div>-->
+<div th:if="${age} <= 20 ">
+    年级小于20岁，应该享受青春年华，未来的事交给未来的自己考虑
+</div>
+<select th:switch="0">
+    <option th:case="1">男</option>
+    <option th:case="0">女</option>
+    <option th:case="*">其他</option>
+</select>
+<hr>
+<div th:text="${names[0]}"></div>
+<!--<div th:each="变量:集合"></div>-->
+<div th:each="item:${names}">
+    <p th:text="${item}"></p>
+</div>
+
+<!--<div th:each="变量,状态对象:集合"></div>
+状态对象有以下属性
+index  表示循环的次数  从0开始
+count 表示循环的次数 从1开始
+size 表示循环的总次数
+-->
+<div th:each="item,state:${names}">
+    <p th:text="'第'+${state.count}+'次输出:'+${item}"></p>
+    <p th:text="'共有'+${state.size}"></p>
+</div>
+<hr>
+获取session的内容
+<div th:text="${session.sInfo}"></div>
+</body>
+</html>
